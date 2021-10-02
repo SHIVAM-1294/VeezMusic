@@ -109,7 +109,7 @@ async def generate_cover(title, thumbnail):
 
 
 @Client.on_message(
-    command(["playlist", f"playlistop@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+    command(["playlistop", f"playlistop@{BOT_USERNAME}"]) & filters.group & ~filters.edited
 )
 async def playlist(client, message):
     global que
@@ -176,7 +176,7 @@ def r_ply(type_):
 
 
 @Client.on_message(
-    command(["player", f"player@{BOT_USERNAME}"]) & filters.group & ~filters.edited
+    command(["playerop", f"playerop@{BOT_USERNAME}"]) & filters.group & ~filters.edited
 )
 @authorized_users_only
 async def settings(client, message):
@@ -198,7 +198,7 @@ async def settings(client, message):
 
 
 @Client.on_message(
-    command(["musicplayerop", f"musicplayer@{BOT_USERNAME}"])
+    command(["musicplayerop", f"musicplayerop@{BOT_USERNAME}"])
     & ~filters.edited
     & ~filters.bot
     & ~filters.private
@@ -431,7 +431,7 @@ async def m_cb(b, cb):
             )
 
 
-@Client.on_message(command(["playop", f"play@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["playop", f"playop@{BOT_USERNAME}"]) & other_filters)
 async def play(_, message: Message):
     global que
     global useer
@@ -824,7 +824,7 @@ async def lol_cb(b, cb):
         os.remove("final.png")
 
 
-@Client.on_message(command(["ytpop", f"ytp@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["ytpop", f"ytpop@{BOT_USERNAME}"]) & other_filters)
 async def ytplay(_, message: Message):
     global que
     if message.chat.id in DISABLED_GROUPS:
