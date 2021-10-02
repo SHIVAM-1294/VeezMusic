@@ -10,7 +10,7 @@ from helpers.filters import command
 
 
 @Client.on_message(
-    command(["userbotjoin", f"userbotjoin@{BOT_USERNAME}"])
+    command(["userbotjoinop", f"userbotjoinop@{BOT_USERNAME}"])
     & ~filters.private
     & ~filters.bot
 )
@@ -53,7 +53,7 @@ async def addchannel(client, message):
 
 
 @Client.on_message(
-    command(["userbotleave", f"userbotleave@{BOT_USERNAME}"])
+    command(["userbotleaveop", f"userbotleaveop@{BOT_USERNAME}"])
     & filters.group
     & ~filters.edited
 )
@@ -70,7 +70,7 @@ async def rem(client, message):
         return
 
 
-@Client.on_message(command(["userbotleaveall", f"userbotleaveall@{BOT_USERNAME}"]))
+@Client.on_message(command(["userbotleaveallop", f"userbotleaveallop@{BOT_USERNAME}"]))
 async def bye(client, message):
     if message.from_user.id not in SUDO_USERS:
         return
@@ -97,7 +97,7 @@ async def bye(client, message):
 
 
 @Client.on_message(
-    command(["userbotjoinchannel", "ubjoinc"]) & ~filters.private & ~filters.bot
+    command(["userbotjoinchannelop", "ubjoincop"]) & ~filters.private & ~filters.bot
 )
 @authorized_users_only
 @errors
