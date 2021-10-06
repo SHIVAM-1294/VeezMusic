@@ -431,7 +431,7 @@ async def m_cb(b, cb):
             )
 
 
-@Client.on_message(command(["play", f"playop@{BOT_USERNAME}"]) & other_filters)
+@Client.on_message(command(["playop", f"playop@{BOT_USERNAME}"]) & other_filters)
 async def play(_, message: Message):
     global que
     global useer
